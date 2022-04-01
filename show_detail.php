@@ -40,7 +40,7 @@ if(isset($_GET['id'])){
     if($row = mysqli_fetch_array($result)){ 
         $body=
          "
-        
+
         <div class='row row-cols-1 row-cols-md-2 g-4 mt-2'>
         <div class='col'>
         <div class='card-group shadow p-3 mb-5 bg-light rounded '>

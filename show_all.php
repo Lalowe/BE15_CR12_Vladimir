@@ -31,7 +31,7 @@
         let content = document.getElementById('content');
         function loadApiContent() {
             let ajReq = new XMLHttpRequest();
-            ajReq.open("GET", "http://localhost/BE15-CR12-Vladimir/display/displayAll.php");
+            ajReq.open("GET", "http:/BE15-CR12-Vladimir/BE15_CR12_Vladimir/display/displayAll.php");
             ajReq.onload = function() {
                 if (ajReq.status == 200) {                  
                     const destinations = JSON.parse(ajReq.responseText).data;

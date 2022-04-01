@@ -14,7 +14,7 @@ if(mysqli_num_rows($result)>0){
             <td class=display 10  >".$row['description']."</td>
             <td><a href='update.php?id=" .$row['id']."'><button class='btn btn-outline-light btn-sm' type='button'>Edit </button></a>
            <a href='delete.php?id=" .$row['id']."'><button class='btn btn-outline-light btn-sm' type='button'>Delete</button></a></td>
-           <td> <a  href='show_detail.php?id=" .$row['id']. $row['latitude'] .$row['longitude']."'><button class='btn btn-outline-info btn-sm' type='button'>Detail</button></a></td>
+           <td> <a  href='show_detail.php?id=" .$row['id']. "'><button class='btn btn-outline-info btn-sm' type='button'>Detail</button></a></td>
            <td> <a href='forecast.html?id=" .$row['id']."'><button class='btn btn-outline-info btn-sm' type='button'>Forecast</button></a></td>
        
         </tr>";
@@ -55,7 +55,7 @@ if(mysqli_num_rows($result)>0){
     <div class="container w-75 h-74 mt-4 mx-auto">
         <h2 class="text-center display 3 text m-3">Travelling is our passion</h2>
         <a href="create.php"><button class="btn btn-outline-primary display 1 mb-3  ">Add a new destination</button></a>
-        <a href="/BE15-CR12-Vladimir/display/API/index.html"><button class="btn btn-outline-primary display 1 mb-3  ">Display all</button></a>
+        <a href="/BE15-CR12-Vladimir/BE15_CR12_Vladimir/display/API/index.html"><button class="btn btn-outline-primary display 1 mb-3  ">Display all</button></a>
         <a href="show_all.php"><button class="btn btn-outline-primary display 1 mb-3  ">Show all</button></a>
         <table class=" table table-dark table-striped table-hover">
             <thead class="table-secondary table-dark  display-9 text">
