@@ -1,0 +1,33 @@
+<body>
+    <div class="content shadow-lg p-3 my-5 text-white rounded w-25 text-center mx-auto">
+    </div>
+</body>
+<script>
+    let apiKey = 'Y6mra0YT1Vo0eVGvGhdgDWJdWUgaHcxA';
+    let cityKey = '31868';
+    let url = 'http://dataservice.accuweather.com/currentconditions/v1/31868?apikey=Y6mra0YT1Vo0eVGvGhdgDWJdWUgaHcxA&language=en-gb&details=false';
+
+
+    function weather(citiKey, apiKey, cityName) { // AJAX FUNCTION
+        let builtUrl = `http://dataservice.accuweather.com/currentconditions/v1/${cityKey}?apikey=${apiKey}&language=en-gb&details=true`;
+        const xml = new XMLHttpRequest();
+        xml.open("GET", builtUrl);
+        xml.onload = function() {
+            const weatherArray = JSON.parse(xml.responseText);
+            console.log(weatherArray[0].ApparentTemperature.Metric.Value);
+            let content = document.getElementsByClassName('content')[0];
+            content.innerHTML = `                
+               <h1 class="cityName">${cityName}</h1>  
+               <img src="https://developer.accuweather.com/sites/default/files/${('0' + weatherArray[0].WeatherIcon).slice(-2)}-s.png" alt="" width="100%">
+               <p class="temp fs-1"><span class="fw-bold">${weatherArray[0].Temperature.Metric.Value}</span>°C</p>
+               <p class="status fs-2">${weatherArray[0].WeatherText}</p>                
+               <p class="temp fs-3">RealFeel: ${weatherArray[0].RealFeelTemperature.Metric.Value}°C</p>
+           `;
+        }
+        xml.send();
+    }
+    weather(cityKey, apiKey, 'Vienna');
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</html>
