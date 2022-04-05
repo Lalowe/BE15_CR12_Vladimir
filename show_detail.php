@@ -26,8 +26,8 @@ if(isset($_GET['id'])){
     
      $result = mysqli_query($connect, $sql );
     // $data = mysqli_fetch_assoc($result);
-    // $latitude = $data ['latitude'];
-    // $longitude = $data ['longitude'];
+    // $latitude = $row ['latitude'];
+    // $longitude = $row ['longitude'];
 
 
 
@@ -37,7 +37,12 @@ if(isset($_GET['id'])){
     // $longitude = $data['longitude'];
 
     $body = "";
-    if($row = mysqli_fetch_array($result)){ 
+    if($row = mysqli_fetch_array($result)){
+         $latitude = $row ['latitude']; // namiesto  $latitude = $data['latitude'];  len prepisat data  
+         // save it like variable and display in javascript
+         // write a script for the Map api and echo that
+         // values in the lang and lat inside the script
+         $longitude = $row ['longitude']; //
         $body=
          "
 
